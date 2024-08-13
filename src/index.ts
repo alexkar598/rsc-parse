@@ -18,7 +18,7 @@ export function decode(arrayBuffer: ArrayBufferLike) {
 
 interface Block {
   used: boolean;
-  encrypted: number;
+  encrypted: boolean;
   type: ResourceType;
   encrypted_checksum: number;
   added: Date;
@@ -32,7 +32,7 @@ function decodeBlock(buf: DataView): Block {
   let pos = 0;
 
   const used = parseBool(buf.getUint8(pos++), true);
-  const encrypted = buf.getUint8(pos) & 0b1000_0000;
+  const encrypted = Boolean(buf.getUint8(pos) & 0b1000_0000);
   const type = parseEnum(buf.getUint8(pos++) & 0b0111_1111, ResourceType, true);
   const encrypted_checksum = buf.getUint32((pos += 4) - 4, true);
   const added = new Date(buf.getUint32((pos += 4) - 4, true) * 1000);
