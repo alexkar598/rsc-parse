@@ -4,6 +4,7 @@ major_minor=$(echo $version | cut -d. -f-2)
 
 set -euxo pipefail
 
+git worktree remove docs || true
 git worktree add docs docs
 
 npm run check_api
