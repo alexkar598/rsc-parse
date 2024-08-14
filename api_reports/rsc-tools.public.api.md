@@ -5,7 +5,27 @@
 ```ts
 
 // @public
-export function packRsc(entries: RscEntry[]): ArrayBuffer;
+export abstract class BaseRscEntry {
+    constructor({ content }: {
+        content: Uint8Array;
+    });
+    content: Uint8Array;
+    // @virtual
+    abstract readonly used: boolean;
+}
+
+// @public
+export class EmptyRscEntry extends BaseRscEntry {
+    constructor(options: ConstructorParameters<typeof BaseRscEntry>[0]);
+    // @override
+    readonly used: false;
+}
+
+// @public
+export type MaybeEmptyRscEntry = RscEntry | EmptyRscEntry;
+
+// @public
+export function packRsc(entries: MaybeEmptyRscEntry[]): ArrayBuffer;
 
 // @public
 export enum ResourceType {
@@ -24,31 +44,36 @@ export enum ResourceType {
 }
 
 // @public
-export class RscEntry {
-    constructor({ path, content, type, used, encrypted, added, modified, }: {
-        path: RscEntry["path"];
+export class RscEntry extends BaseRscEntry {
+    constructor({ path, type, encrypted, added, modified, padding, ...options }: {
         content: RscEntry["content"];
+        path: RscEntry["path"];
         type: RscEntry["type"];
-        used?: RscEntry["used"];
         encrypted?: RscEntry["encrypted"];
         added?: RscEntry["added"];
         modified?: RscEntry["modified"];
+        padding?: RscEntry["padding"];
     });
     added: Date;
-    content: Uint8Array;
     encrypted: boolean;
     modified: Date;
+    padding: Uint8Array;
     path: string;
     type: ResourceType;
-    used: boolean;
+    // @override
+    readonly used: true;
 }
 
 // @public
-export interface UnpackOptions {
+export interface UnpackOptions<IncludeEmpty extends boolean = boolean> {
+    include_empty?: IncludeEmpty;
     validate_checksums?: boolean;
 }
 
 // @public
-export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions): RscEntry[];
+export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<false>): MaybeEmptyRscEntry[];
+
+// @public
+export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<true>): RscEntry[];
 
 ```
