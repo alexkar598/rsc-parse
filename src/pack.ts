@@ -44,10 +44,10 @@ function encodeEntry(buf: DataView, entry: RscEntry) {
   buf.setUint8(pos++, Number(entry.used));
   buf.setUint8(pos++, (Number(entry.encrypted) << 7) | entry.type);
   buf.setUint32((pos += 4) - 4, computed_checksum, true);
-  buf.setUint32((pos += 4) - 4, entry.added.valueOf() / 1000, true);
-  buf.setUint32((pos += 4) - 4, entry.modified.valueOf() / 1000, true);
   buf.setUint32((pos += 4) - 4, entry.content.byteLength, true);
   arr.set(cPath, (pos += cPathLen) - cPathLen);
+    buf.setUint32((pos += 4) - 4, entry.modified.valueOf() / 1000, true);
+    buf.setUint32((pos += 4) - 4, entry.added.valueOf() / 1000, true);
 
   arr.set(entry.content, pos);
   pos += entry.content.byteLength;

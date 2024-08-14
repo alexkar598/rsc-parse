@@ -65,8 +65,8 @@ function decodeEntry(buf: DataView, options: UnpackOptions): RscEntry {
   const encrypted = Boolean(entry_type & 0b1000_0000);
   const type = parseEnum(entry_type, ResourceType, true);
   const expected_checksum = buf.getUint32((pos += 4) - 4, true);
-  const added = new Date(buf.getUint32((pos += 4) - 4, true) * 1000);
   const modified = new Date(buf.getUint32((pos += 4) - 4, true) * 1000);
+  const added = new Date(buf.getUint32((pos += 4) - 4, true) * 1000);
   const expected_content_length = buf.getUint32((pos += 4) - 4, true);
   const [path, path_length] = parseCString(buf, pos++);
   pos += path_length;
