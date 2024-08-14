@@ -19,8 +19,7 @@
     "build": "npx tsc -b",
     "extract_api": "npm run build && npx api-extractor run --local",
     "check_api": "npm run build && npx api-extractor run",
-    "prepare": "npm run build",
-    "generate_docs": "npm run check_api && "
+    "prepare": "npm run check_api"
   },
   "devDependencies": {
     "@microsoft/api-documenter": "~7.23.38",
