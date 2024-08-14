@@ -9,14 +9,14 @@ git worktree add docs docs
 npm run check_api
 npx api-documenter markdown -i dist/ -o docs/v$major_minor/
 
-ln -sf rsc-tools.md docs/v$major_minor/index.md
-ln -sf v$major_minor docs/v$major
-ln -sf v$major_minor docs/latest
+ln -sfT rsc-tools.md docs/v$major_minor/index.md
+ln -sfT v$major_minor docs/v$major
+ln -sfT v$major_minor docs/latest
 
 pushd docs
 git add .
-git commit -m "Updates documentation ($version})"
+git commit -m "Updates documentation ($version)"
 git push origin
 popd
 
-git worktree remote docs
+git worktree remove docs
