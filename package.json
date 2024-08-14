@@ -52,9 +52,12 @@
       "@semantic-release/npm",
       "semantic-release-npm-deprecate-old-versions",
       "@semantic-release/github",
-      ["@semantic-release/exec", {
-        "prepare": "./generate_docs.sh ${nextRelease.version}"
-      }]
+      [
+        "@semantic-release/exec",
+        {
+          "prepare": "./generate_docs.sh ${nextRelease.version} true"
+        }
+      ]
     ]
   }
 }
