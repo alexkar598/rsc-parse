@@ -1,6 +1,6 @@
 {
   "name": "rsc-tools",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "author": "alexkar598",
   "description": "Parser for the BYOND RSC format",
   "keywords": [
@@ -13,18 +13,23 @@
     "type": "git",
     "url": "git+https://github.com/alexkar598/rsc-parser.git"
   },
-  "homepage": "https://github.com/alexkar598/rsc-parser",
+  "homepage": "https://github.com/alexkar598/rsc-tools",
   "scripts": {
     "start": "npx tsx src/node/index.ts",
     "build": "npx tsc -b",
     "extract_api": "npm run build && npx api-extractor run --local",
-    "check_api": "npm run build && npx api-extractor run"
+    "check_api": "npm run build && npx api-extractor run",
+    "prepare": "npm run build",
+    "generate_docs": "npm run check_api && "
   },
   "devDependencies": {
     "@microsoft/api-documenter": "^7.25.11",
     "@microsoft/api-extractor": "^7.47.6",
+    "@semantic-release/exec": "^6.0.3",
     "@types/node": "^22.2.0",
     "prettier": "^3.3.3",
+    "semantic-release": "^24.0.0",
+    "semantic-release-npm-deprecate-old-versions": "^1.3.4",
     "tsx": "^4.17.0",
     "typescript": "5.4.2"
   },
@@ -39,5 +44,17 @@
     "dist/lib/**/*",
     "!dist/lib/types/polycrc*",
     "dist/rsc-tools.d.ts"
-  ]
+  ],
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "semantic-release-npm-deprecate-old-versions",
+      "@semantic-release/github",
+      ["@semantic-release/exec", {
+        "success": "./publish_docs.sh ${nextRelease.version}"
+      }]
+    ]
+  }
 }
