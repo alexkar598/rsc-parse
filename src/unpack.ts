@@ -40,7 +40,7 @@ export interface UnpackOptions<IncludeEmpty extends boolean = boolean> {
 export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
   options?: UnpackOptions<false>,
-): MaybeEmptyRscEntry[];
+): RscEntry[];
 /**
  * Unpack an RSC file into the {@link RscEntry | entries} that compose it, including holes in the output
  *
@@ -56,7 +56,7 @@ export function unpackRsc(
 export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
   options?: UnpackOptions<true>,
-): RscEntry[];
+): MaybeEmptyRscEntry[];
 export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
   options: UnpackOptions = {},
