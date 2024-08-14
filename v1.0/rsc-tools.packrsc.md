@@ -14,39 +14,10 @@ export declare function packRsc(entries: RscEntry[]): ArrayBuffer;
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  entries | [RscEntry](./rsc-tools.rscentry.md)<!-- -->\[\] | Entries to compose |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-entries
-
-
-</td><td>
-
-[RscEntry](./rsc-tools.rscentry.md)<!-- -->\[\]
-
-
-</td><td>
-
-Entries to compose
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 ArrayBuffer

@@ -14,55 +14,11 @@ export declare function unpackRsc(arrayBuffer: ArrayBufferLike, options?: Unpack
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  arrayBuffer | ArrayBufferLike | Buffer containing an RSC file |
+|  options | [UnpackOptions](./rsc-tools.unpackoptions.md) | _(Optional)_ |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-arrayBuffer
-
-
-</td><td>
-
-ArrayBufferLike
-
-
-</td><td>
-
-Buffer containing an RSC file
-
-
-</td></tr>
-<tr><td>
-
-options
-
-
-</td><td>
-
-[UnpackOptions](./rsc-tools.unpackoptions.md)
-
-
-</td><td>
-
-_(Optional)_
-
-
-</td></tr>
-</tbody></table>
 **Returns:**
 
 [RscEntry](./rsc-tools.rscentry.md)<!-- -->\[\]

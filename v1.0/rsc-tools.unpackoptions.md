@@ -14,44 +14,7 @@ export interface UnpackOptions
 
 ## Properties
 
-<table><thead><tr><th>
+|  Property | Modifiers | Type | Description |
+|  --- | --- | --- | --- |
+|  [validate\_checksums?](./rsc-tools.unpackoptions.validate_checksums.md) |  | boolean | _(Optional)_ Validate the RSC file's integrity |
 
-Property
-
-
-</th><th>
-
-Modifiers
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[validate\_checksums?](./rsc-tools.unpackoptions.validate_checksums.md)
-
-
-</td><td>
-
-
-</td><td>
-
-boolean
-
-
-</td><td>
-
-_(Optional)_ Validate the RSC file's integrity
-
-
-</td></tr>
-</tbody></table>

@@ -12,115 +12,26 @@ The [unpackRsc()](./rsc-tools.unpackrsc.md) and [packRsc()](./rsc-tools.packrsc.
 
 ## Classes
 
-<table><thead><tr><th>
-
-Class
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[RscEntry](./rsc-tools.rscentry.md)
-
-
-</td><td>
-
-Entry representing a single file in an RSC file
-
-
-</td></tr>
-</tbody></table>
+|  Class | Description |
+|  --- | --- |
+|  [RscEntry](./rsc-tools.rscentry.md) | Entry representing a single file in an RSC file |
 
 ## Enumerations
 
-<table><thead><tr><th>
-
-Enumeration
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[ResourceType](./rsc-tools.resourcetype.md)
-
-
-</td><td>
-
-Type of [entry](./rsc-tools.rscentry.md)
-
-
-</td></tr>
-</tbody></table>
+|  Enumeration | Description |
+|  --- | --- |
+|  [ResourceType](./rsc-tools.resourcetype.md) | Type of [entry](./rsc-tools.rscentry.md) |
 
 ## Functions
 
-<table><thead><tr><th>
-
-Function
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[packRsc(entries)](./rsc-tools.packrsc.md)
-
-
-</td><td>
-
-Pack [entries](./rsc-tools.rscentry.md) into an RSC file
-
-
-</td></tr>
-<tr><td>
-
-[unpackRsc(arrayBuffer, options)](./rsc-tools.unpackrsc.md)
-
-
-</td><td>
-
-Unpack an RSC file into the [entries](./rsc-tools.rscentry.md) that compose it
-
-
-</td></tr>
-</tbody></table>
+|  Function | Description |
+|  --- | --- |
+|  [packRsc(entries)](./rsc-tools.packrsc.md) | Pack [entries](./rsc-tools.rscentry.md) into an RSC file |
+|  [unpackRsc(arrayBuffer, options)](./rsc-tools.unpackrsc.md) | Unpack an RSC file into the [entries](./rsc-tools.rscentry.md) that compose it |
 
 ## Interfaces
 
-<table><thead><tr><th>
+|  Interface | Description |
+|  --- | --- |
+|  [UnpackOptions](./rsc-tools.unpackoptions.md) | Options when unpacking an RSC file |
 
-Interface
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-[UnpackOptions](./rsc-tools.unpackoptions.md)
-
-
-</td><td>
-
-Options when unpacking an RSC file
-
-
-</td></tr>
-</tbody></table>

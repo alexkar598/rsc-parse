@@ -22,34 +22,7 @@ constructor({ path, content, type, used, encrypted, added, modified, }: {
 
 ## Parameters
 
-<table><thead><tr><th>
+|  Parameter | Type | Description |
+|  --- | --- | --- |
+|  { path, content, type, used, encrypted, added, modified, } | { path: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["path"\]; content: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["content"\]; type: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["type"\]; used?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["used"\]; encrypted?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["encrypted"\]; added?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["added"\]; modified?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["modified"\]; } |  |
 
-Parameter
-
-
-</th><th>
-
-Type
-
-
-</th><th>
-
-Description
-
-
-</th></tr></thead>
-<tbody><tr><td>
-
-{ path, content, type, used, encrypted, added, modified, }
-
-
-</td><td>
-
-{ path: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["path"\]; content: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["content"\]; type: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["type"\]; used?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["used"\]; encrypted?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["encrypted"\]; added?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["added"\]; modified?: [RscEntry](./rsc-tools.rscentry.md)<!-- -->\["modified"\]; }
-
-
-</td><td>
-
-
-</td></tr>
-</tbody></table>
