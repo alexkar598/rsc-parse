@@ -44,6 +44,7 @@
     "!dist/lib/types/polycrc*",
     "dist/rsc-tools.d.ts"
   ],
+  "sideEffects": false,
   "release": {
     "plugins": [
       "@semantic-release/commit-analyzer",
