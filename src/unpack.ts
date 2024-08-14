@@ -29,13 +29,16 @@ export interface UnpackOptions {
  *
  * @public
  * @param arrayBuffer - Buffer containing an RSC file
- * @param options -
+ * @param options - Options for unpacking
  * @returns The {@link RscEntry | entries} contained within the arrayBuffer parameter
  */
 export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
   options: UnpackOptions = {},
 ): RscEntry[] {
+  //Polyfill for nodejs buffers
+  if ("buffer" in arrayBuffer) arrayBuffer = arrayBuffer.buffer as ArrayBuffer;
+
   const buf = new DataView(arrayBuffer);
   const entries = new Array<RscEntry>();
 
