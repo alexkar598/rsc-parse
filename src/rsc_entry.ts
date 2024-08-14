@@ -28,7 +28,7 @@ export abstract class BaseRscEntry {
    * Contents of the entry.
    *
    * @remarks
-   * This buffer may be a view on the buffer originally passed to {@link (unpackRsc:1)}. Modifying this buffer could
+   * This buffer may be a view on the buffer originally passed to {@link unpackRsc}. Modifying this buffer could
    * modify the other buffer and vice versa.
    */
   public content: Uint8Array;
