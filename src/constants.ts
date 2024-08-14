@@ -1,14 +1,54 @@
+/**
+ * Type of {@link RscEntry | entry}
+ * @public
+ */
 export enum ResourceType {
-  UNK = 0x0,
-  MID = 0x1,
-  WAV = 0x2,
-  DMI = 0x3,
-  BMP = 0x5,
-  PNG = 0x6,
-  ZIP = 0x9,
-  RSC = 0xa,
-  JPG = 0xb,
-  DDMI = 0xc,
-  GIF = 0xd,
-  TTF = 0xe,
+  /**
+   * Unknown file
+   */
+  Unknown = 0x0,
+  /**
+   * Sequencer file (.mid, .midi, .mod, .s3m, .xm, .it, .oxm)
+   */
+  Sequencer = 0x1,
+  /**
+   * Audio file (.wav, .ogg, .raw, .wma, .aiff)
+   */
+  Audio = 0x2,
+  /**
+   * Sprite sheet file (.dmi)
+   */
+  SpriteSheet = 0x3,
+  /**
+   * Bitmap file (.bmp)
+   */
+  Bitmap = 0x5,
+  /**
+   * Lossless image file (.png)
+   */
+  LosslessImage = 0x6,
+  /**
+   * Archive file (.zip)
+   */
+  Archive = 0x9,
+  /**
+   * Resource archive file (.rsc)
+   */
+  Resource = 0xa,
+  /**
+   * Lossy image file (.jpg, .jpeg)
+   */
+  LossyImage = 0xb,
+  /**
+   * Dynamic sprite sheet file (.ddmi)
+   */
+  DynamicSpriteSheet = 0xc,
+  /**
+   * Animated image file (.gif)
+   */
+  AnimatedImage = 0xd,
+  /**
+   * Font file (.ttf)
+   */
+  Font = 0xe,
 }

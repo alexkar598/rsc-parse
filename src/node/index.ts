@@ -1,14 +1,13 @@
 import * as fs from "node:fs";
-import { decode } from "../index.js";
+import { packRsc, unpackRsc } from "../index.js";
+import { assert } from "../util.js";
 
 const file = fs.readFileSync("./data/yogstation.rsc");
 
 console.time("RSC Parse");
-const rsc = decode(file.buffer);
+const rsc = unpackRsc(file.buffer);
 console.timeEnd("RSC Parse");
 
-for (const block of rsc) {
-  console.log(
-    `${block.used ? "+" : "-"}${block.path}: ${block.content_length}`,
-  );
-}
+const newFile = Buffer.from(packRsc(rsc));
+fs.writeFileSync("./data/yogstation_repacked.rsc", newFile);
+assert(file.equals(newFile));

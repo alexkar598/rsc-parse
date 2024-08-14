@@ -1,14 +1,43 @@
 {
+  "name": "rsc-tools",
+  "version": "1.0.0",
+  "author": "alexkar598",
+  "description": "Parser for the BYOND RSC format",
+  "keywords": [
+    "byond",
+    "rsc",
+    "parser",
+    "ss13"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexkar598/rsc-parser.git"
+  },
+  "homepage": "https://github.com/alexkar598/rsc-parser",
   "scripts": {
     "start": "npx tsx src/node/index.ts",
-    "build": "npx tsc -b"
+    "build": "npx tsc -b",
+    "extract_api": "npm run build && npx api-extractor run --local",
+    "check_api": "npm run build && npx api-extractor run"
   },
   "devDependencies": {
+    "@microsoft/api-documenter": "^7.25.11",
+    "@microsoft/api-extractor": "^7.47.6",
     "@types/node": "^22.2.0",
     "prettier": "^3.3.3",
     "tsx": "^4.17.0",
-    "typescript": "^5.5.4"
+    "typescript": "5.4.2"
   },
   "type": "module",
-  "main": "dist/lib/rsc.js"
+  "main": "dist/lib/index.js",
+  "types": "dist/rsc-tools.d.ts",
+  "dependencies": {
+    "polycrc": "^1.1.1"
+  },
+  "license": "MIT",
+  "files": [
+    "dist/lib/**/*",
+    "!dist/lib/types/polycrc*",
+    "dist/rsc-tools.d.ts"
+  ]
 }

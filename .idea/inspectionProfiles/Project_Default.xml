@@ -1,0 +1,11 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="JsonStandardCompliance" enabled="true" level="ERROR" enabled_by_default="true">
+      <scope name="JSONC" level="ERROR" enabled="true">
+        <option name="myWarnAboutComments" value="false" />
+        <option name="myWarnAboutTrailingCommas" value="false" />
+      </scope>
+    </inspection_tool>
+  </profile>
+</component>
