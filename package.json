@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/alexkar598/rsc-tools.git"
   },
-  "homepage": "https://github.com/alexkar598/rsc-tools",
+  "homepage": "https://alexkar598.github.io/rsc-tools/latest/",
   "scripts": {
     "start": "npx tsx src/node/index.ts",
     "build": "npx tsc -b",
