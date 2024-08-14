@@ -1,9 +1,22 @@
 version=$1
+major=$(echo $version | cut -d. -f1)
+major_minor=$(echo $version | cut -d. -f-2)
 
 set -euxo pipefail
 
-npm run check_api
-npx api-documenter markdown -i dist/ -o pages/$version/
+git worktree add docs docs
 
-ln -sf rsc-tools.md pages/$version/index.md
-ln -sf $version pages/latest
+npm run check_api
+npx api-documenter markdown -i dist/ -o docs/v$major_minor/
+
+ln -sf rsc-tools.md docs/v$major_minor/index.md
+ln -sf v$major_minor docs/v$major
+ln -sf v$major_minor docs/latest
+
+pushd docs
+git add .
+git commit -m "Updates documentation ($version})"
+git push origin
+popd
+
+git worktree remote docs

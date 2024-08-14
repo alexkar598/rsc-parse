@@ -53,7 +53,7 @@
       "semantic-release-npm-deprecate-old-versions",
       "@semantic-release/github",
       ["@semantic-release/exec", {
-        "success": "./publish_docs.sh ${nextRelease.version}"
+        "prepare": "./publish_docs.sh ${nextRelease.version}"
       }]
     ]
   }
