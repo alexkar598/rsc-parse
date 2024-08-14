@@ -9,7 +9,7 @@ Unpack an RSC file into the [entries](./rsc-tools.rscentry.md) that compose it
 **Signature:**
 
 ```typescript
-export declare function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<false>): MaybeEmptyRscEntry[];
+export declare function unpackRsc<Options extends UnpackOptions>(arrayBuffer: ArrayBufferLike, options?: Options): Options extends UnpackOptions<true> ? MaybeEmptyRscEntry[] : RscEntry[];
 ```
 
 ## Parameters
@@ -17,11 +17,11 @@ export declare function unpackRsc(arrayBuffer: ArrayBufferLike, options?: Unpack
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  arrayBuffer | ArrayBufferLike | Buffer containing an RSC file |
-|  options | [UnpackOptions](./rsc-tools.unpackoptions.md)<!-- -->&lt;false&gt; | _(Optional)_ Options for unpacking |
+|  options | Options | _(Optional)_ Options for unpacking |
 
 **Returns:**
 
-[MaybeEmptyRscEntry](./rsc-tools.maybeemptyrscentry.md)<!-- -->\[\]
+Options extends [UnpackOptions](./rsc-tools.unpackoptions.md)<!-- -->&lt;true&gt; ? [MaybeEmptyRscEntry](./rsc-tools.maybeemptyrscentry.md)<!-- -->\[\] : [RscEntry](./rsc-tools.rscentry.md)<!-- -->\[\]
 
 The [entries](./rsc-tools.rscentry.md) contained within the arrayBuffer parameter
 
