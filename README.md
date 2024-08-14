@@ -2,7 +2,7 @@
 
 Library for packing and unpacking .rsc files
 
-[Documentation](https://alexkar598.github.io/rsc-tools/latest/)
+[Documentation](https://alexkar598.github.io/rsc-tools/latest/) [NPM](https://www.npmjs.com/package/rsc-tools)
 
 ## Example Usage
 
