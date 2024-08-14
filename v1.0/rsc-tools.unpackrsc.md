@@ -17,7 +17,7 @@ export declare function unpackRsc(arrayBuffer: ArrayBufferLike, options?: Unpack
 |  Parameter | Type | Description |
 |  --- | --- | --- |
 |  arrayBuffer | ArrayBufferLike | Buffer containing an RSC file |
-|  options | [UnpackOptions](./rsc-tools.unpackoptions.md) | _(Optional)_ |
+|  options | [UnpackOptions](./rsc-tools.unpackoptions.md) | _(Optional)_ Options for unpacking |
 
 **Returns:**
 
