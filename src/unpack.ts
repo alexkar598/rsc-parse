@@ -57,6 +57,22 @@ export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
   options?: UnpackOptions<true>,
 ): MaybeEmptyRscEntry[];
+/**
+ * Unpack an RSC file into the {@link RscEntry | entries} that compose it
+ *
+ * @remarks
+ * This function creates views over the buffer passed as argument. Modifying the content of an {@link RscEntry | entry}
+ * will modify the buffer passed in this function and vice versa.
+ *
+ * @public
+ * @param arrayBuffer - Buffer containing an RSC file
+ * @param options - Options for unpacking
+ * @returns The {@link RscEntry | entries} contained within the arrayBuffer parameter
+ */
+export function unpackRsc(
+  arrayBuffer: ArrayBufferLike,
+  options?: UnpackOptions,
+): RscEntry[] | MaybeEmptyRscEntry[];
 export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
   options: UnpackOptions = {},

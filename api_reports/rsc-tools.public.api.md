@@ -76,4 +76,7 @@ export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<
 // @public
 export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<true>): MaybeEmptyRscEntry[];
 
+// @public
+export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions): RscEntry[] | MaybeEmptyRscEntry[];
+
 ```
