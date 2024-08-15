@@ -36,6 +36,7 @@ The [unpackRsc()](./rsc-tools.unpackrsc.md) and [packRsc()](./rsc-tools.packrsc.
 |  [packRsc(entries)](./rsc-tools.packrsc.md) | Pack [entries](./rsc-tools.rscentry.md) into an RSC file |
 |  [unpackRsc(arrayBuffer, options)](./rsc-tools.unpackrsc.md) | Unpack an RSC file into the [entries](./rsc-tools.rscentry.md) that compose it |
 |  [unpackRsc(arrayBuffer, options)](./rsc-tools.unpackrsc_1.md) | Unpack an RSC file into the [entries](./rsc-tools.rscentry.md) that compose it, including holes in the output |
+|  [unpackRsc(arrayBuffer, options)](./rsc-tools.unpackrsc_2.md) | Unpack an RSC file into the [entries](./rsc-tools.rscentry.md) that compose it |
 
 ## Interfaces
 
