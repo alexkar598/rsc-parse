@@ -37,10 +37,30 @@ export interface UnpackOptions<IncludeEmpty extends boolean = boolean> {
  * @param options - Options for unpacking
  * @returns The {@link RscEntry | entries} contained within the arrayBuffer parameter
  */
-export function unpackRsc<Options extends UnpackOptions>(
+export function unpackRsc(
   arrayBuffer: ArrayBufferLike,
-  options = {} as Options,
-): Options extends UnpackOptions<true> ? MaybeEmptyRscEntry[] : RscEntry[] {
+  options?: UnpackOptions<false>,
+): RscEntry[];
+/**
+ * Unpack an RSC file into the {@link RscEntry | entries} that compose it, including holes in the output
+ *
+ * @remarks
+ * This function creates views over the buffer passed as argument. Modifying the content of an {@link RscEntry | entry}
+ * will modify the buffer passed in this function and vice versa.
+ *
+ * @public
+ * @param arrayBuffer - Buffer containing an RSC file
+ * @param options - Options for unpacking
+ * @returns The {@link RscEntry | entries} contained within the arrayBuffer parameter
+ */
+export function unpackRsc(
+  arrayBuffer: ArrayBufferLike,
+  options?: UnpackOptions<true>,
+): MaybeEmptyRscEntry[];
+export function unpackRsc(
+  arrayBuffer: ArrayBufferLike,
+  options: UnpackOptions = {},
+): RscEntry[] | MaybeEmptyRscEntry[] {
   //Polyfill for nodejs buffers
   if ("buffer" in arrayBuffer) arrayBuffer = arrayBuffer.buffer as ArrayBuffer;
 
@@ -60,9 +80,7 @@ export function unpackRsc<Options extends UnpackOptions>(
     entries.push(entry);
   }
 
-  return entries as Options extends UnpackOptions<true>
-    ? MaybeEmptyRscEntry[]
-    : RscEntry[];
+  return entries;
 }
 
 function decodeEntry(

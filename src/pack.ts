@@ -5,7 +5,7 @@ import { MaybeEmptyRscEntry } from "./rsc_entry.js";
  * Pack {@link RscEntry | entries} into an RSC file
  *
  * @remarks
- * Unlike {@link unpackRsc}, the resulting buffer is not a view. It may be safely modified.
+ * Unlike {@link (unpackRsc:1)}, the resulting buffer is not a view. It may be safely modified.
  *
  * @public
  * @param entries - Entries to compose

@@ -2,7 +2,7 @@
  * Library for unpacking and repacking BYOND .rsc files
  *
  * @remarks
- * The {@link unpackRsc} and {@link packRsc} functions are used to convert between buffers and arrays
+ * The {@link (unpackRsc:1)} and {@link packRsc} functions are used to convert between buffers and arrays
  * of {@link RscEntry | RscEntries}, the latter are used to see and manipulate the contents of the files inside the .rsc
  *
  * @packageDocumentation

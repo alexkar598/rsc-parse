@@ -71,6 +71,9 @@ export interface UnpackOptions<IncludeEmpty extends boolean = boolean> {
 }
 
 // @public
-export function unpackRsc<Options extends UnpackOptions>(arrayBuffer: ArrayBufferLike, options?: Options): Options extends UnpackOptions<true> ? MaybeEmptyRscEntry[] : RscEntry[];
+export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<false>): RscEntry[];
+
+// @public
+export function unpackRsc(arrayBuffer: ArrayBufferLike, options?: UnpackOptions<true>): MaybeEmptyRscEntry[];
 
 ```
